@@ -10,14 +10,14 @@
 <body>
     <section class="modal-section">
         <button class="modal-button">x</button>
-        <form action="">
+        <form action="" id="form">
             <div class="title">
                 <label for="title">Title</label>
-                <input type="text" name="title">
+                <input type="text" name="title" id="title"> <!--Añadí un ID-->
             </div>
             <div class="title">
                 <label for="initial-date">Initial date</label>
-                <input type="date" name="initial-date">
+                <input type="date" name="initial-date" id="initialDate"> <!--Añadí un ID-->
             </div>
             <div class="title">
                 <input type="checkbox">
@@ -25,7 +25,7 @@
             </div>
             <div class="title">
                 <label for="End date">End date</label>
-                <input type="date" name="End-date">
+                <input type="date" name="End-date" id="endDate"> <!--Añadí un ID-->
             </div>
             <div class="title">
                 <input type="checkbox">
@@ -33,20 +33,20 @@
             </div>
             <div class="title">
                 <label for="time">Time</label>
-                <select name="" id="">
+                <select name="" id="time"> //Añadí un ID
                     <option value="5 min">5 min</option>
                     <option value="10 min">10 min</option>
                     <option value="15 min">15 min</option>
                     <option value="20 min">20 min</option>
                 </select>
             </div>
-            <div class="tittle">
+            <div class="title">
                 <label for="description">Description</label>
-                <textarea name="description" id="" cols="30" rows="10"></textarea>
+                <textarea name="description" id="description" cols="30" rows="10"></textarea> <!--Añadí un ID-->
             </div>
             <div class="title">
                 <label for="event-type">Event type</label>
-                <select name="event-type" id="">
+                <select name="event-type" id="eventType"> <!--Añadí un ID-->
                     <option value="Meeting">Meeting</option>
                     <option value="Study">Study</option>
                     <option value="Personal">Personal</option>
@@ -54,5 +54,6 @@
             </div> 
         </form>
     </section>
+    <script src="src/assets/js/modalValidacion.js"></script>
 </body>
 </html>
