@@ -1,20 +1,32 @@
 const formulario = document.getElementById('form');
 
 const inputs = [
-    title = document.getElementById('title'),
-    desc = document.getElementById('description')
-]
+    document.getElementById('title'),
+    document.getElementById('description')
+];
 
+const dates = {
+    'initialDate' : document.getElementById('initialDate'),
+    'endDate' : document.getElementById('endDate')
+}
+
+const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth()+1;
+const day = date.getDate();
+const toDay = day + '/' + month + '/' + year;
+
+console.log(toDay);
 
 const expresiones = {
-    title: /^[a-zA-ZÀ-ÿ\s]{4,12}$/,
-    description: /[a-zA-Z0-9\_\-\s]{5,40}$/
+    title: /^[a-zA-ZÀ-ÿ\s\d]{4,10}$/,
+    description: /^[a-zA-ZÀ-ÿ\s\d]{5,40}$/
 }
 const validarTextos = (e) =>{
    switch(e.target.name){
        case "title":
            if(expresiones.title.test(e.target.value)){
-                console.log('Conseguido');
+               console.log('Conseguido');
            }else{
                 console.log('KK de burra');
            }
@@ -29,9 +41,27 @@ const validarTextos = (e) =>{
         break;
    }
 }
+//console.log(key + ' ' + value);
+const validarFechas = () =>{
+    if(dates.endDate.value < dates.initialDate.value){
+        console.log('No pudes finalizar un evento antes de crearlo');
+    }else{
+        console.log('Todo OK');
+    }
+}
+/*const validarFechas = () =>{
+    switch(){
+
+    }
+}*/
+
+Object.entries(dates).forEach( (value)=>{
+    //value[1].addEventListener('focusin',validarFechas );
+    value[1].addEventListener('focusout', validarFechas);
+});
 
 inputs.forEach( (input)=>{
-    input.addEventListener('keydown', validarTextos);
+    input.addEventListener('keyup',validarTextos );
     input.addEventListener('blur', validarTextos);
 });
 
