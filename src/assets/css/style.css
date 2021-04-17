@@ -549,6 +549,7 @@ label{
   font-size: xx-large;
   color: var(--darkestGray);
   background-color: transparent;
+  transition: transform 0.1s;
 }
 .modal-button.fa-window-close:hover {
   transform: scale(1.05);
@@ -591,6 +592,7 @@ label{
   padding: 5px 10px;
   border-radius: 5px;
   height: 44px;
+  transition: transform 0.1s;
 }
 .m-action-button:hover {
   transform: scale(1.05);
@@ -676,6 +678,7 @@ label{
   font-size: xx-large;
   color: var(--darkestGray);
   background-color: transparent;
+  transition: transform 0.1s;
 }
 .modal-event-button.fa-window-close:hover {
   transform: scale(1.05);
